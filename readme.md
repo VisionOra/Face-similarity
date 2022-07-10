@@ -15,8 +15,10 @@ Make Python virtual environment (you can use of your own choice)
 conda create -n FCR python=3.8
 # Intall Requirements
 pip install -r requirements.txt
-## Run Code
+## Run Code Test face similarity
 python main.py
+## Run code test face-detection
+python face_detection_main.py 
 ```
 
 ### Cmake Installation guide

@@ -4,6 +4,7 @@ import numpy as np
 from mtcnn.mtcnn import MTCNN
 from keras_vggface.vggface import VGGFace
 from keras_vggface.utils import preprocess_input
+from face_detection.detect_face import inference as detect_face
 
 
 class Utils:
@@ -53,7 +54,7 @@ class Utils:
         return image
 
     # extract faces and calculate face embeddings for a list of photo files
-    def get_embeddings(self, image_hash_dict: dict) -> np.asarray:
+    def get_embeddings(self, image_hash_dict: dict, required_size=(224, 224)) -> np.asarray:
         """Return the embeddings of two faces, to find the cosine similarity
         betweenn them.
 
@@ -72,7 +73,10 @@ class Utils:
         # Caching cropped faces
         for img_hash, image in image_hash_dict.items():
             if img_hash not in self.cache_crop_face:
-                self.cache_crop_face[img_hash] = self.extract_face(image)
+                face = detect_face(image)
+                self.cache_crop_face[img_hash] = cv2.resize(face, dsize=required_size, interpolation=cv2.INTER_CUBIC).astype(np.float32)
+            
+                
 
         # extract faces
         faces = [self.cache_crop_face[image_hashes[0]],
