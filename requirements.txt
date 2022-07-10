@@ -5,3 +5,4 @@ opencv-python==4.6.0.66
 mtcnn==0.1.1
 matplotlib==3.5.2
 Keras-Applications==1.0.8
+h5py==2.10.0
