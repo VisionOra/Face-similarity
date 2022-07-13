@@ -2,7 +2,7 @@ import time
 import cv2
 import numpy as np
 from mtcnn.mtcnn import MTCNN
-from model import VGGFace
+from keras_vggface.vggface import VGGFace
 from keras_vggface.utils import preprocess_input
 from face_detection.detect_face import inference as detect_face
 
