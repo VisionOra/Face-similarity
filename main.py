@@ -29,17 +29,16 @@ image8 = "/Users/sohaibanwar/Documents/face_recogination/testing_images/test3.jp
 
 
 test_list = [
-    [image1, image2, "[Different] - Different Images"],
-    [image2, image2, "[Same] - Same Images"],
-    [image8, image2,"[Different] - One Image is alreaedy in System Other one is new (Testing cache)"],
-    [image8, image2, "[Different] - Both of the iamges are available in system alreayd"]
+    [image1, image2],
+    [image2, image2],
+    [image8, image2],
+    [image8, image2]
 ]
 
-for (image1, image2, results) in test_list:
+for (image1, image2) in test_list:
     st_time = time.time()
     score, match = main(image1, image2)
     print("\n\n\n------------------------------------------------------")
     print(f"Score {score}, Match {match}")
-    print(f"Expected Results {results}")
     print(f"End Time {time.time() - st_time}")
     print("-----------------------------------------------------------")

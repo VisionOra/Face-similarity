@@ -1,3 +1,4 @@
 .ipynb_checkpoints
 .DS_Store
 __pycache__
+model_weights/rcmalli_vggface_tf_notop_senet50.h5
