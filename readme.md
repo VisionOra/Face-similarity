@@ -86,4 +86,4 @@ Inference Time 0.019464969635009766
 ```
 
 
-Currently Live om : https://idphoto.ai/
+
